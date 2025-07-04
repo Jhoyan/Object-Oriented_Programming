@@ -1053,3 +1053,4 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\refint\Client.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.pdb
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\ref\Client.dll
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.sourcelink.json

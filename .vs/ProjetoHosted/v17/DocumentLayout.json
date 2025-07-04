@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Program.cs",
-              "RelativeDocumentMoniker": "Client\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Program.cs",
-              "RelativeToolTip": "Client\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T19:13:19.339Z",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Client\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Client\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T20:10:22.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T18:54:18.062Z",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\Home.razor",
+              "RelativeToolTip": "Client\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T19:58:23.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Client\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Layout\\MainLayout.razor*",
+              "RelativeToolTip": "Client\\Layout\\MainLayout.razor*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-04T19:57:24.073Z",
               "EditorCaption": ""
             }
           ]

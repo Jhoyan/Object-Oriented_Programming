@@ -64,3 +64,4 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Server\obj\Debug\net8.0\Server.pdb
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Server\obj\Debug\net8.0\Server.genruntimeconfig.cache
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Server\obj\Debug\net8.0\ref\Server.dll
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Server\obj\Debug\net8.0\Server.sourcelink.json
