@@ -1,0 +1,23 @@
+﻿@page "/proprietario"
+@inject HttpClient httpClient
+
+<h3 class="text-white m-4">Proprietários</h3>
+<MudGrid Class="py-2">
+    <MudItem xs="11" Class="d-flex justify-end">
+        <MudButton Variant="Variant.Filled" Color="Color.Primary">Adicionar</MudButton>
+    </MudItem>
+</MudGrid>
+
+<MudGrid>
+
+</MudGrid>
+
+@code {
+
+    private async Task LoadProprietarios()
+    {
+        // Implementar a lógica para carregar os proprietários
+        // Exemplo: var proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietarios");
+    }
+
+}
