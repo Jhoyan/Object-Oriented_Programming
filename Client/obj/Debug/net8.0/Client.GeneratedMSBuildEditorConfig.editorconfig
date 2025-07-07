@@ -33,8 +33,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/Proprietarios.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvcHJpZXRhcmlvcy5yYXpvcg==
+[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/ProprietarioCadastrar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvcHJpZXRhcmlvQ2FkYXN0cmFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/ProprietarioPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvcHJpZXRhcmlvUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/_Imports.razor]

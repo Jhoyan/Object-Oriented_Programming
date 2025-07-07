@@ -1,0 +1,49 @@
+﻿@using Shared.Models;
+
+@page "/proprietario"
+@inject HttpClient httpClient
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+
+
+<h3 class="text-white m-4">Proprietários</h3>
+
+<MudGrid Class="py-2">
+    <MudItem xs="12" Class="d-flex justify-end">
+        <MudItem xs="2">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogAsync">Novo Proprietário</MudButton>
+        </MudItem>
+    </MudItem>
+</MudGrid>
+
+
+@code {
+
+    private Task OpenDialogAsync()
+    {
+        var CadastroDialog = new DialogOptions()
+            {
+                CloseOnEscapeKey = true
+            };
+        return DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CadastroDialog);
+    }
+
+
+    Pessoa pessoa = new Pessoa();
+    Proprietario proprietario = new Proprietario();
+
+    private async Task InsertPessoa()
+    {
+        string api = "api/proprietario/incluir";
+        HttpResponseMessage response = await httpClient.PostAsJsonAsync<Pessoa>(api, pessoa);
+        InsertProprietario();
+    }
+
+
+    private async Task InsertProprietario()
+    {
+        string api = "api/proprietario/incluir";
+        HttpResponseMessage response = await httpClient.PostAsJsonAsync<Proprietario>(api, proprietario);
+    }
+
+}

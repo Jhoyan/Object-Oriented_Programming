@@ -1,5 +1,41 @@
 [
   {
+    "ContainingType": "Server.Controllers.PessoaController",
+    "Method": "Get",
+    "RelativePath": "api/Pessoa",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.PessoaController",
+    "Method": "CreatePessoa",
+    "RelativePath": "api/Pessoa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pessoa",
+        "Type": "Shared.Models.Pessoa",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.ProprietarioController",
+    "Method": "Get",
+    "RelativePath": "api/Proprietario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

@@ -2,24 +2,28 @@
 @inherits LayoutComponentBase
 
 @* Required *@
-<MudThemeProvider />
+<MudThemeProvider IsDarkMode="true"/>
 <MudPopoverProvider />
 
 @* Needed for dialogs *@
-<MudDialogProvider />
+<MudDialogProvider 
+    MaxWidth="MaxWidth.ExtraExtraLarge"/>
 
 @* Needed for snackbars *@
 <MudSnackbarProvider />
 
 <div class="page">
-    <div class="bb-page bg-black">
+    <div class="bb-page bg-dark">
         <NavMenu />
     </div>
 
-    <main class="bg-dark">
+    <main>
 
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+@code{
+    
+}

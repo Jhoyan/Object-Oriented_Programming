@@ -1,12 +1,13 @@
-﻿namespace Shared.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Shared.Models
 {
     public class Proprietario
-    {
-        private int id { get; set; }
-        private string nome { get; set; }
-        private string cpf { get; set; }
-        private DateOnly dataNascimento { get; set; }
-        private char sexo { get; set; }
-        private string cnh { get; set; }
+    {        
+        public int? Id { get; set; }
+
+        [Required(ErrorMessage = "A CNH é obrigatória.")]
+        [RegularExpression(@"^\d{11}$", ErrorMessage = "A CNH deve conter 11 dígitos numéricos.")]
+        public string Cnh { get; set; }
     }
 }

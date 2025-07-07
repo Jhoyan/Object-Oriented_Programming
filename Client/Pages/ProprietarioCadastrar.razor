@@ -1,0 +1,50 @@
+﻿@using Shared.Models;
+@inject IDialogService IDialogService;
+
+@*Tenho que pensar alguma forma de adicinar EditForm e DataAnnotationValidator pra verificar a validade dos campos... Por enquanto dando errado*@
+<EditForm Model="@pessoa" OnValidSubmit="CadastrarPessoa" OnInvalidSubmit="OnInvalidSubmit">
+    <DataAnnotationsValidator />
+    <MudDialog Style="width: 1200px; height: 1000px; overflow-y:scroll;">
+        <TitleContent>
+            <MudText Typo="Typo.h6">Cadastrar Proprietário</MudText>
+        </TitleContent>
+        <DialogContent>
+            <MudPaper Style="height: 680px;" Elevation="0" Class="d-flex allign-start flex-grow-1 gap-4">
+                <MudTextField @bind-Value="pessoa.Nome" For="@(() => pessoa.Nome)" Label="Nome*" Variant="Variant.Outlined" Class="m-3 text-white" />
+                <MudTextField Mask="@(new PatternMask("000.000.000-00"))" @bind-Value="pessoa.Cpf" For="@(() => pessoa.Cpf)" Label="CPF*" Variant="Variant.Outlined" Class="m-3"></MudTextField>
+                @*Por algum motivo o PatternMask parece "sair" do campo quando aplica a máscara. Por isso, antes do usuário terminar de
+                digitar o cpf, ele já recebe a mensagem em vermelho que o cpf deve ter 11 digitos. Necessário correção.*@
+                <MudDatePicker Class="m-2" Label="Data de Nascimento" @bind-Date="pessoa.DataNasc" Variant="Variant.Outlined"></MudDatePicker>
+            </MudPaper>
+        </DialogContent>
+        <DialogActions>
+            <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Cadastrar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</EditForm>
+@code {
+    Pessoa pessoa = new Pessoa();
+    private bool success = false;
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private void Submit()
+    {
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+    private void Cancelar()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task CadastrarPessoa()
+    {
+
+    }
+    private void OnInvalidSubmit()
+    {
+
+    }
+}
