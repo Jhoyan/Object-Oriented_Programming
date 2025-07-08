@@ -16,12 +16,13 @@ namespace Shared.Models
 
         static string DataHoje = (DateOnly.FromDateTime(DateTime.Now)).ToString();
 
-        [Required(ErrorMessage = "A data de nascimento é obrigatória.")]
-        [DataType(DataType.Date, ErrorMessage = "A data de nascimento deve ser uma data válida.")]
+        [Required(ErrorMessage = "A data de nascimento é obrigatória.")]        
         // Falta implementar uma lógica para não permitir datas futuras. Fiquei travado aqui.
         public DateTime? DataNasc { get; set; }
 
         [Required(ErrorMessage = "O sexo é obrigatório.")]
-        public char Sexo { get; set; }
+        public string Sexo { get; set; }
+        
+        public Proprietario ProprietarioPessoa { get; set; } = new();
     }
 }

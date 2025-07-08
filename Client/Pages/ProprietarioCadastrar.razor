@@ -1,22 +1,47 @@
 ﻿@using Shared.Models;
 @inject IDialogService IDialogService;
+@inject ISnackbar Snackbar
 
-@*Tenho que pensar alguma forma de adicinar EditForm e DataAnnotationValidator pra verificar a validade dos campos... Por enquanto dando errado*@
 <EditForm Model="@pessoa" OnValidSubmit="CadastrarPessoa" OnInvalidSubmit="OnInvalidSubmit">
     <DataAnnotationsValidator />
-    <MudDialog Style="width: 1200px; height: 1000px; overflow-y:scroll;">
+    <MudDialog Style="width: 900px; height: auto; overflow-y:scroll;">
+
         <TitleContent>
             <MudText Typo="Typo.h6">Cadastrar Proprietário</MudText>
         </TitleContent>
+
         <DialogContent>
-            <MudPaper Style="height: 680px;" Elevation="0" Class="d-flex allign-start flex-grow-1 gap-4">
-                <MudTextField @bind-Value="pessoa.Nome" For="@(() => pessoa.Nome)" Label="Nome*" Variant="Variant.Outlined" Class="m-3 text-white" />
-                <MudTextField Mask="@(new PatternMask("000.000.000-00"))" @bind-Value="pessoa.Cpf" For="@(() => pessoa.Cpf)" Label="CPF*" Variant="Variant.Outlined" Class="m-3"></MudTextField>
-                @*Por algum motivo o PatternMask parece "sair" do campo quando aplica a máscara. Por isso, antes do usuário terminar de
-                digitar o cpf, ele já recebe a mensagem em vermelho que o cpf deve ter 11 digitos. Necessário correção.*@
-                <MudDatePicker Class="m-2" Label="Data de Nascimento" @bind-Date="pessoa.DataNasc" Variant="Variant.Outlined"></MudDatePicker>
+            <MudPaper Class="d-flex flex-column" Elevation="0">
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="pessoa.Nome" For="@(() => pessoa.Nome)" Label="Nome*" Variant="Variant.Outlined" />
+                    </MudItem>
+                    @*Por algum motivo o PatternMask parece "sair" do campo quando aplica a máscara. Por isso, antes do usuário terminar de
+                    digitar o cpf, ele já recebe a mensagem em vermelho que o cpf deve ter 11 digitos. Necessário correção.*@
+                    <MudItem xs="6">
+                        <MudDatePicker Class="" For="@(() => pessoa.DataNasc)" Label="Data de Nascimento*" @bind-Date="pessoa.DataNasc" Variant="Variant.Outlined"></MudDatePicker>
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudTextField Mask="@(new PatternMask("000.000.000-00"))" @bind-Value="pessoa.Cpf" For="@(() => pessoa.Cpf)" Label="CPF*" Variant="Variant.Outlined" Validation="ValidarCPF"/>
+                    </MudItem>                    
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="pessoa.ProprietarioPessoa.Cnh" For="@(() => pessoa.ProprietarioPessoa.Cnh)" Label="CNH*" Variant="Variant.Outlined" Validation="ValidarCNH"></MudTextField>
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 flex-column">
+                    <MudText Class="mt-3 ml-3">Sexo*</MudText>
+                    <MudForm>
+                        <MudRadioGroup Class="" @bind-Value="pessoa.Sexo" For="@(() => pessoa.Sexo)">
+                            <MudRadio Value="@("M")" Color="Color.Primary">Masculino</MudRadio>
+                            <MudRadio Value="@("F")" Color="Color.Secondary">Feminino</MudRadio>
+                        </MudRadioGroup>
+                    </MudForm>
+                </MudPaper>
             </MudPaper>
         </DialogContent>
+       
         <DialogActions>
             <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
             <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Cadastrar</MudButton>
@@ -25,6 +50,7 @@
 </EditForm>
 @code {
     Pessoa pessoa = new Pessoa();
+    Proprietario proprietario = new Proprietario();
     private bool success = false;
 
     [CascadingParameter]
@@ -39,12 +65,124 @@
         MudDialog.Cancel();
     }
 
+    public bool ValidarCNH(string numeroCnh)
+    {
+        bool cnhValida = false;
+
+        // Pré-validações de formato
+        if (numeroCnh.Length == 11)
+        {
+            // Cálculo do primeiro dígito verificador
+            int somaDecrescente = 0;
+            int primeiroDigitoVerificador;
+            int ajusteSegundoDigito = 0;
+
+            for (int i = 0; i < 9; i++)
+            {
+                int digito = Convert.ToInt32(numeroCnh[i].ToString());
+                int pesoDecrescente = 9 - i;
+                somaDecrescente += digito * pesoDecrescente;
+            }
+
+            int restoDecrescente = somaDecrescente % 11;
+            if (restoDecrescente >= 10)
+            {
+                primeiroDigitoVerificador = 0;
+                ajusteSegundoDigito = 2;
+            }
+            else
+            {
+                primeiroDigitoVerificador = restoDecrescente;
+            }
+
+            // Cálculo do segundo dígito verificador
+            int somaCrescente = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                int digito = Convert.ToInt32(numeroCnh[i].ToString());
+                int pesoCrescente = i + 1;
+                somaCrescente += digito * pesoCrescente;
+            }
+
+            int restoCrescente = somaCrescente % 11;
+            int segundoDigitoVerificador = (restoCrescente >= 10)
+                ? 0
+                : restoCrescente - ajusteSegundoDigito;
+
+            // Combinação e comparação com os dígitos originais
+            string digitosGerados = primeiroDigitoVerificador.ToString()
+                                  + segundoDigitoVerificador.ToString();
+            string digitosOriginais = numeroCnh.Substring(9, 2);
+
+            cnhValida = (digitosGerados == digitosOriginais);
+        }
+        return cnhValida;
+    }
+
+    public bool ValidarCPF(string cpf)
+    {
+        cpf = cpf.Replace(".", "").Replace("-", "").Trim();
+        int soma = 0;
+        int indice = 0;
+        for (int i = 10; i >= 2; i--)
+        {
+            soma += i * Convert.ToInt32(cpf.Substring(indice, 1));
+            indice++;
+        }
+        int verificador1 = 11 - (soma % 11);
+        if (verificador1 >= 10)
+            verificador1 = 0;
+
+        soma = 0;
+        indice = 0;
+        for (int i = 11; i >= 2; i--)
+        {
+            if (i != 2)
+            {
+                soma += i * Convert.ToInt32(cpf.Substring(indice, 1));
+                indice++;
+            }
+            else
+            {
+                soma += i * verificador1;
+            }
+        }
+
+        int verificador2 = 11 - (soma % 11);
+        if (verificador2 >= 10)
+            verificador2 = 0;
+
+        if (cpf.Length != 11)
+        {
+            return false;
+        }
+        else
+        {
+            string verificadorStr1 = cpf.Substring(09, 1);
+            string verificadorStr2 = cpf.Substring(10, 1);
+            if (verificadorStr1 != verificador1.ToString() || verificadorStr2 != verificador2.ToString())
+                return false;
+
+            return true;
+        }
+    }
+
     private async Task CadastrarPessoa()
     {
-
+        if(!ValidarCPF(pessoa.Cpf))
+        {
+            Snackbar.Add("CPF inválido", Severity.Error);
+            return;
+        }
+        if(!ValidarCNH(proprietario.Cnh))
+        {
+            Snackbar.Add("CNH inválida", Severity.Error);
+            return;
+        }
+        Snackbar.Add("O proprietário foi cadastrado com sucesso", Severity.Success);
     }
     private void OnInvalidSubmit()
     {
-
+        //Snackbar.Add("Erro", Severity.Error);
     }
 }
