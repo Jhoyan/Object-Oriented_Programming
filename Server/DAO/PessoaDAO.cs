@@ -20,7 +20,7 @@ namespace Server.DAO
 
                 comando.ExecuteNonQuery();
 
-                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();                
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
                 proprietarioDAO.CreateProprietario(proprietario, (int)comando.LastInsertedId);
             }
             catch (MySqlException ex)
@@ -32,11 +32,32 @@ namespace Server.DAO
                 Conexao.Desconectar();
             }
         }
-
-        public Pessoa Get()
+        public async void UpdatePessoa(Proprietario proprietario)
         {
-            // Aqui você pode implementar a lógica para buscar uma pessoa no banco de dados
-            return new Pessoa();
+            string sql = "UPDATE pessoa SET nome_pessoa = @Nome, cpf_pessoa = @Cpf, dataNasc_pessoa = @DataNasc, sexo_pessoa = @Sexo WHERE id_pessoa = @Id;";
+            MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
+
+            try
+            {
+                comando.Parameters.AddWithValue("@Id", proprietario.Id_pessoa);
+                comando.Parameters.AddWithValue("@Nome", proprietario.Nome);
+                comando.Parameters.AddWithValue("@Cpf", proprietario.Cpf);
+                comando.Parameters.AddWithValue("@DataNasc", proprietario.DataNasc);
+                comando.Parameters.AddWithValue("@Sexo", proprietario.Sexo);
+
+                comando.ExecuteNonQuery();
+
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
+                proprietarioDAO.UpdateProprietario(proprietario);
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception($"Erro ao atualizar pessoa: {ex.Message}");
+            }
+            finally
+            {
+                Conexao.Desconectar();
+            }
         }
     }
 }

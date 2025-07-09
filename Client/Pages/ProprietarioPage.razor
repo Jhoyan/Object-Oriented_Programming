@@ -81,14 +81,15 @@
         var parameters = new DialogParameters
     {
         { "proprietarioPorId", result ?? new Proprietario() }
-    };
-        StateHasChanged();
+    };        
 
         var UpdateDialog = new DialogOptions()
             {
                 CloseOnEscapeKey = true
             };
         await DialogService.ShowAsync<ProprietarioEditar>("Edição de Proprietário", parameters, UpdateDialog);
+
+        StateHasChanged();
     }
 
     private async Task DeleteProprietario(int? id_proprietario)

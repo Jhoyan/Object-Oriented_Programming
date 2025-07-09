@@ -65,19 +65,20 @@ namespace Server.DAO
             proprietarioPorId.Id_proprietario = id ?? 0;
             try
             {
-                string sql = "SELECT id_proprietario, nome_pessoa, cpf_pessoa, cnh_proprietario, dataNasc_pessoa, sexo_pessoa FROM proprietario INNER JOIN pessoa ON proprietario.FK_id_pessoa = pessoa.id_pessoa WHERE id_proprietario = @id;";
+                string sql = "SELECT id_proprietario, nome_pessoa, cpf_pessoa, cnh_proprietario, dataNasc_pessoa, sexo_pessoa, FK_id_pessoa FROM proprietario INNER JOIN pessoa ON proprietario.FK_id_pessoa = pessoa.id_pessoa WHERE id_proprietario = @id;";
                 MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
                 comando.Parameters.AddWithValue("@id", id);
 
                 using (MySqlDataReader reader = comando.ExecuteReader())
                 {
                     while (reader.Read())
-                    {                        
+                    {
                         proprietarioPorId.Nome = reader.GetString("nome_pessoa");
                         proprietarioPorId.Cpf = reader.GetString("cpf_pessoa");
                         proprietarioPorId.Cnh = reader.GetString("cnh_proprietario");
                         proprietarioPorId.DataNasc = reader.GetDateTime("dataNasc_pessoa");
                         proprietarioPorId.Sexo = reader.GetString("sexo_pessoa");
+                        proprietarioPorId.Id_pessoa = reader.GetInt32("FK_id_pessoa");
                     }
                 }
 
@@ -87,6 +88,27 @@ namespace Server.DAO
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+        public void UpdateProprietario(Proprietario proprietario)
+        {
+            string sql = "UPDATE proprietario SET cnh_proprietario = @cnh WHERE id_proprietario = @id;";
+            MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
+
+            try
+            {
+                comando.Parameters.AddWithValue("@id", proprietario.Id_proprietario);
+                comando.Parameters.AddWithValue("@cnh", proprietario.Cnh);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception($"Erro ao atualizar proprietario: {ex.Message}");
+            }
+            finally
+            {
+                Conexao.Desconectar();
             }
         }
     }

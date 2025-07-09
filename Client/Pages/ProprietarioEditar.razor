@@ -50,7 +50,7 @@
 
         <DialogActions>
             <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
-            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Cadastrar</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Editar</MudButton>
         </DialogActions>
     </MudDialog>
 </EditForm>
@@ -180,11 +180,7 @@
             if (!ValidarCPF(proprietarioPorId.Cpf))
             {
                 throw new Exception("CPF inválido");
-            }
-            if (proprietarioPorId.Cnh == null)
-            {
-                throw new Exception("A CNH é obrigatória");
-            }
+            }            
             if (!ValidarCNH(proprietarioPorId.Cnh))
             {
                 throw new Exception("CNH inválida");
@@ -196,18 +192,19 @@
             return;
         }
 
-        string api = "api/pessoa/incluir";
-        HttpResponseMessage httpResponse = await httpClient.PostAsJsonAsync<Proprietario>(api, proprietarioPorId);
+        string api = "api/pessoa/atualizar";
+        HttpResponseMessage httpResponse = await httpClient.PutAsJsonAsync<Proprietario>(api, proprietarioPorId);
+        
 
         if (!httpResponse.IsSuccessStatusCode)
-        {
-            Snackbar.Add("Erro ao cadastrar pessoa", Severity.Error);
+        {           
+            Snackbar.Add("Erro ao atualizar pessoa", Severity.Error);
             return;
         }
         else
         {
-            MudDialog.Close(DialogResult.Ok(true));
-            Snackbar.Add("O proprietário foi cadastrado com sucesso", Severity.Success);
+            MudDialog.Close(DialogResult.Ok(true));            
+            Snackbar.Add("O proprietário foi atualizado com sucesso", Severity.Success);
         }
 
     }

@@ -179,11 +179,7 @@
             if (!ValidarCPF(proprietario.Cpf))
             {
                 throw new Exception("CPF inválido");
-            }
-            if(proprietario.Cnh == null)
-            {
-                throw new Exception("A CNH é obrigatória");
-            }
+            }            
             if (!ValidarCNH(proprietario.Cnh))
             {
                 throw new Exception("CNH inválida");
@@ -205,7 +201,7 @@
         }
         else
         {
-            MudDialog.Close(DialogResult.Ok(true));
+            MudDialog.Close(DialogResult.Ok(true));            
             Snackbar.Add("O proprietário foi cadastrado com sucesso", Severity.Success);
         }
         

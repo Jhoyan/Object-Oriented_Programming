@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Server.Controllers.PessoaController",
+    "Method": "UpdatePessoa",
+    "RelativePath": "api/Pessoa/atualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "proprietario",
+        "Type": "Shared.Models.Proprietario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.PessoaController",
     "Method": "CreatePessoa",
     "RelativePath": "api/Pessoa/incluir",
     "HttpMethod": "POST",
