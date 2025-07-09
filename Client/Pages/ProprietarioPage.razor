@@ -4,6 +4,8 @@
 @inject HttpClient httpClient
 @inject IDialogService DialogService
 @inject ISnackbar Snackbar
+@inject NavigationManager NavManager
+@using Microsoft.AspNetCore.WebUtilities
 
 
 <h3 class="text-white m-4">Proprietários</h3>
@@ -11,7 +13,7 @@
 <MudGrid Class="py-2">
     <MudItem xs="12" Class="d-flex justify-end">
         <MudItem xs="1">
-            <MudButton Class="mb-3" Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogAsync">Adicionar</MudButton>
+            <MudButton Class="mb-3" Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogCreate">Adicionar</MudButton>
         </MudItem>
     </MudItem>
 </MudGrid>
@@ -19,7 +21,7 @@
 <MudItem xs="12">
     <MudTable Items="@proprietarios" Hover="true" Filter="new Func<Proprietario,bool>(FilterFunc1)">
         <ToolBarContent>
-            <MudText Typo="Typo.h6">Periodic Elements</MudText>
+            <MudText Typo="Typo.h6">Proprietários Cadastrados</MudText>
             <MudSpacer />
             <MudTextField @bind-Value="pesquisaString1" Placeholder="Pesquisar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
         </ToolBarContent>
@@ -43,7 +45,7 @@
             <MudTd DataLabel="CPF">@context.Cpf</MudTd>
             <MudTd DataLabel="CNH">@context.Cnh</MudTd>
             <MudTd Class="d-flex justify-content-center">
-                <MudButton Class="mr-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => OpenDialogAsync())">Editar</MudButton>
+                <MudButton Class="mr-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => OpenDialogUpdate(context.Id_proprietario))">Editar</MudButton>
                 <MudButton Class="ml-2 mr-5" Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => DeleteProprietario(@context.Id_proprietario))">Excluir</MudButton>
             </MudTd>
         </RowTemplate>
@@ -55,26 +57,45 @@
     private string pesquisaString1 = string.Empty;
 
     private List<Proprietario> proprietarios = new List<Proprietario>();
+    private Proprietario proprietarioPorId = new Proprietario();
 
     protected override async Task OnInitializedAsync()
-    {        
-        proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");        
+    {
+        proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
     }
 
-    private Task OpenDialogAsync()
+    private Task OpenDialogCreate()
     {
-        var CadastroDialog = new DialogOptions()
+        var CreateDialog = new DialogOptions()
             {
                 CloseOnEscapeKey = true
             };
-        return DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CadastroDialog);
-    }   
+        return DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CreateDialog);
+    }
 
-    private async Task DeleteProprietario(int? id)
+    private async Task OpenDialogUpdate(int? id_proprietario)
+    {        
+        var api = $"api/proprietario/listarPorId/{id_proprietario}";
+        var result = await httpClient.GetFromJsonAsync<Proprietario>(api);
+
+        var parameters = new DialogParameters
+    {
+        { "proprietarioPorId", result ?? new Proprietario() }
+    };
+        StateHasChanged();
+
+        var UpdateDialog = new DialogOptions()
+            {
+                CloseOnEscapeKey = true
+            };
+        await DialogService.ShowAsync<ProprietarioEditar>("Edição de Proprietário", parameters, UpdateDialog);
+    }
+
+    private async Task DeleteProprietario(int? id_proprietario)
     {
         return;
     }
-    
+
     private bool FilterFunc1(Proprietario proprietarioTable) => FilterFunc(proprietarioTable, pesquisaString1);
 
     private bool FilterFunc(Proprietario proprietarioTable, string searchString)

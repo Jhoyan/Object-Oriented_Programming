@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uywCZbGI62kmjY9w+iDGknP0V8Yh2DJynainnCyPlrA=",
+  "Hash": "DIrR9yv2O8OZgrhuXE72/sK6HE2T70Kzt0cWtxI3xWI=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -416,6 +416,25 @@
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Metadata.wasm"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm",
+      "SourceId": "Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.WebUtilities.wasm"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.CSharp.wasm",
       "SourceId": "Client",
       "SourceType": "Computed",
@@ -775,6 +794,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\webcil\\Microsoft.JSInterop.WebAssembly.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm",
+      "SourceId": "Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\webcil\\Microsoft.Net.Http.Headers.wasm"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.VisualBasic.Core.wasm",
@@ -4615,6 +4653,25 @@
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Security.Cryptography.OpenSsl.wasm"
     },
     {
+      "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\compressed\\6p1prusvqp.gz",
+      "SourceId": "Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.wasm"
+    },
+    {
       "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\compressed\\6se5vlmc6b.gz",
       "SourceId": "Client",
       "SourceType": "Computed",
@@ -7102,6 +7159,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.wasm"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\compressed\\sg2imsrtap.gz",
+      "SourceId": "Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.wasm"
     },
     {
       "Identity": "C:\\Users\\User\\Desktop\\Documentos área de trabalho\\Faculdade Jhoyan\\3º Período\\Programação Orientada a Objetos\\ProjetoHosted\\Client\\obj\\Debug\\net8.0\\compressed\\sh2z7zm3ei.gz",

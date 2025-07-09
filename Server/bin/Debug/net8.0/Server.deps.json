@@ -11,6 +11,7 @@
           "Client": "1.0.0",
           "Microsoft.AspNetCore.Components.DataAnnotations.Validation": "3.2.0-rc1.20223.4",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.10",
+          "Microsoft.AspNetCore.WebUtilities": "8.0.4",
           "Microsoft.EntityFrameworkCore.Design": "9.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
@@ -708,6 +709,18 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Razor.Language.dll": {
             "assemblyVersion": "6.0.24.0",
             "fileVersion": "6.0.2423.51812"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.WebUtilities/8.0.4": {
+        "dependencies": {
+          "Microsoft.Net.Http.Headers": "8.0.4",
+          "System.IO.Pipelines": "9.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.WebUtilities.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.424.17014"
           }
         }
       },
@@ -1525,6 +1538,17 @@
           }
         }
       },
+      "Microsoft.Net.Http.Headers/8.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "9.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Net.Http.Headers.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.424.17014"
+          }
+        }
+      },
       "Microsoft.NET.StringTools/17.8.3": {
         "runtime": {
           "lib/net8.0/Microsoft.NET.StringTools.dll": {
@@ -2120,6 +2144,7 @@
       "Client/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.8",
+          "Microsoft.AspNetCore.WebUtilities": "8.0.4",
           "MudBlazor": "8.9.0",
           "Shared": "1.0.0"
         },
@@ -2601,6 +2626,13 @@
       "path": "microsoft.aspnetcore.razor.language/6.0.24",
       "hashPath": "microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.WebUtilities/8.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EOvc6n0uKOO7iqS06it9tGuMf+WTI+xpIOtMRAyIm8clD05JVqDxwB71WLvY1xGaApy1UOFpds5h+E2cPkRWfg==",
+      "path": "microsoft.aspnetcore.webutilities/8.0.4",
+      "hashPath": "microsoft.aspnetcore.webutilities.8.0.4.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2922,6 +2954,13 @@
       "sha512": "sha512-1u0IwsPklrIOvzQsQDCV7SJGQtX3roblllN/i4bh+GouOxRP/XTPwgAOOrlrDBpiF5leiGxblw67wNTkRULg9g==",
       "path": "microsoft.jsinterop.webassembly/8.0.8",
       "hashPath": "microsoft.jsinterop.webassembly.8.0.8.nupkg.sha512"
+    },
+    "Microsoft.Net.Http.Headers/8.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0jVeQr18PHhOKgZZNb9+uz7gpY3cFF187Vb5RIYU5iuLFbAxOMCSugYlKzagNkbYXpq55h78ExgGL/oRLNXLAQ==",
+      "path": "microsoft.net.http.headers/8.0.4",
+      "hashPath": "microsoft.net.http.headers.8.0.4.nupkg.sha512"
     },
     "Microsoft.NET.StringTools/17.8.3": {
       "type": "package",

@@ -14,7 +14,7 @@ namespace Server.Controllers
         {
             try
             {
-               return Ok();
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -23,12 +23,27 @@ namespace Server.Controllers
         }
         [HttpGet("listar")]
         public IActionResult ListarProprietarios()
-        {            
+        {
             try
             {
                 ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
                 var proprietarios = proprietarioDAO.ListProprietario();
                 return Ok(proprietarios);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("listarPorId/{id}")]
+        public IActionResult ListarProprietariosPorId([FromRoute] int? id)
+        {
+            try
+            {
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
+                var proprietarioPorId = proprietarioDAO.ListProprietarioPorId(id);
+                return Ok(proprietarioPorId);
             }
             catch (Exception ex)
             {

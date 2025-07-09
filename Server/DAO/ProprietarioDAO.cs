@@ -7,13 +7,13 @@ namespace Server.DAO
     public class ProprietarioDAO
     {
         public void CreateProprietario(Proprietario proprietario, int ultimoInserido)
-        {            
+        {
             string sql = "INSERT INTO proprietario(cnh_proprietario, FK_id_pessoa) VALUES(@cnh, @id_pessoa);";
             MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
 
             try
             {
-                comando.Parameters.AddWithValue("@cnh", proprietario.Cnh);                                             
+                comando.Parameters.AddWithValue("@cnh", proprietario.Cnh);
                 comando.Parameters.AddWithValue("@id_pessoa", ultimoInserido);
 
                 comando.ExecuteNonQuery();
@@ -53,6 +53,36 @@ namespace Server.DAO
 
                 Conexao.Desconectar();
                 return proprietarios;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public Proprietario ListProprietarioPorId(int? id)
+        {
+            Proprietario proprietarioPorId = new Proprietario();
+            proprietarioPorId.Id_proprietario = id ?? 0;
+            try
+            {
+                string sql = "SELECT id_proprietario, nome_pessoa, cpf_pessoa, cnh_proprietario, dataNasc_pessoa, sexo_pessoa FROM proprietario INNER JOIN pessoa ON proprietario.FK_id_pessoa = pessoa.id_pessoa WHERE id_proprietario = @id;";
+                MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
+                comando.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = comando.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {                        
+                        proprietarioPorId.Nome = reader.GetString("nome_pessoa");
+                        proprietarioPorId.Cpf = reader.GetString("cpf_pessoa");
+                        proprietarioPorId.Cnh = reader.GetString("cnh_proprietario");
+                        proprietarioPorId.DataNasc = reader.GetDateTime("dataNasc_pessoa");
+                        proprietarioPorId.Sexo = reader.GetString("sexo_pessoa");
+                    }
+                }
+
+                Conexao.Desconectar();
+                return proprietarioPorId;
             }
             catch (Exception ex)
             {
