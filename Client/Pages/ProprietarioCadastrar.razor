@@ -1,8 +1,12 @@
 ﻿@using Shared.Models;
 @inject IDialogService IDialogService;
 @inject ISnackbar Snackbar
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient httpClient
 
-<EditForm Model="@pessoa" OnValidSubmit="CadastrarPessoa" OnInvalidSubmit="OnInvalidSubmit">
+
+<EditForm Model="@proprietario" OnValidSubmit="CadastrarPessoa" OnInvalidSubmit="OnInvalidSubmit">
     <DataAnnotationsValidator />
     <MudDialog Style="width: 900px; height: auto; overflow-y:scroll;">
 
@@ -14,26 +18,28 @@
             <MudPaper Class="d-flex flex-column" Elevation="0">
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
                     <MudItem xs="6">
-                        <MudTextField @bind-Value="pessoa.Nome" For="@(() => pessoa.Nome)" Label="Nome*" Variant="Variant.Outlined" />
+                        <MudTextField @bind-Value="proprietario.Nome" For="@(() => proprietario.Nome)" Label="Nome*" Variant="Variant.Outlined" />
                     </MudItem>
                     @*Por algum motivo o PatternMask parece "sair" do campo quando aplica a máscara. Por isso, antes do usuário terminar de
                     digitar o cpf, ele já recebe a mensagem em vermelho que o cpf deve ter 11 digitos. Necessário correção.*@
                     <MudItem xs="6">
-                        <MudDatePicker Class="" For="@(() => pessoa.DataNasc)" Label="Data de Nascimento*" @bind-Date="pessoa.DataNasc" Variant="Variant.Outlined"></MudDatePicker>
+                        <MudDatePicker Class="" For="@(() => proprietario.DataNasc)" Label="Data de Nascimento*" @bind-Date="proprietario.DataNasc" Variant="Variant.Outlined"></MudDatePicker>
                     </MudItem>
                 </MudPaper>
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
                     <MudItem xs="6">
-                        <MudTextField Mask="@(new PatternMask("000.000.000-00"))" @bind-Value="pessoa.Cpf" For="@(() => pessoa.Cpf)" Label="CPF*" Variant="Variant.Outlined" Validation="ValidarCPF"/>
-                    </MudItem>                    
+                        <MudTextField Mask="@(new PatternMask("000.000.000-00"))" @bind-Value="proprietario.Cpf" For="@(() => proprietario.Cpf)" Label="CPF*" Variant="Variant.Outlined" Validation="ValidarCPF" />
+                    </MudItem>
                     <MudItem xs="6">
-                        <MudTextField @bind-Value="pessoa.ProprietarioPessoa.Cnh" For="@(() => pessoa.ProprietarioPessoa.Cnh)" Label="CNH*" Variant="Variant.Outlined" Validation="ValidarCNH"></MudTextField>
+
+                        <MudTextField Mask="@(new PatternMask("00000000000"))" @bind-Value="proprietario.Cnh" For="@(() => proprietario.Cnh)" Label="CNH*" Variant="Variant.Outlined" Validation="ValidarCNH"></MudTextField>
+
                     </MudItem>
                 </MudPaper>
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 flex-column">
                     <MudText Class="mt-3 ml-3">Sexo*</MudText>
                     <MudForm>
-                        <MudRadioGroup Class="" @bind-Value="pessoa.Sexo" For="@(() => pessoa.Sexo)">
+                        <MudRadioGroup Class="" @bind-Value="proprietario.Sexo" For="@(() => proprietario.Sexo)">
                             <MudRadio Value="@("M")" Color="Color.Primary">Masculino</MudRadio>
                             <MudRadio Value="@("F")" Color="Color.Secondary">Feminino</MudRadio>
                         </MudRadioGroup>
@@ -41,17 +47,16 @@
                 </MudPaper>
             </MudPaper>
         </DialogContent>
-       
+
         <DialogActions>
             <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
             <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Cadastrar</MudButton>
         </DialogActions>
     </MudDialog>
 </EditForm>
+
 @code {
-    Pessoa pessoa = new Pessoa();
     Proprietario proprietario = new Proprietario();
-    private bool success = false;
 
     [CascadingParameter]
     private IMudDialogInstance MudDialog { get; set; }
@@ -169,17 +174,41 @@
 
     private async Task CadastrarPessoa()
     {
-        if(!ValidarCPF(pessoa.Cpf))
+        try
         {
-            Snackbar.Add("CPF inválido", Severity.Error);
+            if (!ValidarCPF(proprietario.Cpf))
+            {
+                throw new Exception("CPF inválido");
+            }
+            if(proprietario.Cnh == null)
+            {
+                throw new Exception("A CNH é obrigatória");
+            }
+            if (!ValidarCNH(proprietario.Cnh))
+            {
+                throw new Exception("CNH inválida");
+            }
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add(ex.Message, Severity.Error);
             return;
         }
-        if(!ValidarCNH(proprietario.Cnh))
+
+        string api = "api/pessoa/incluir";
+        HttpResponseMessage httpResponse = await httpClient.PostAsJsonAsync<Proprietario>(api, proprietario);
+
+        if(!httpResponse.IsSuccessStatusCode)        
         {
-            Snackbar.Add("CNH inválida", Severity.Error);
+            Snackbar.Add("Erro ao cadastrar pessoa", Severity.Error);
             return;
         }
-        Snackbar.Add("O proprietário foi cadastrado com sucesso", Severity.Success);
+        else
+        {
+            MudDialog.Close(DialogResult.Ok(true));
+            Snackbar.Add("O proprietário foi cadastrado com sucesso", Severity.Success);
+        }
+        
     }
     private void OnInvalidSubmit()
     {

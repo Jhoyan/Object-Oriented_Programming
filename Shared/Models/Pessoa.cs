@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace Shared.Models
 {
     public class Pessoa
     {        
-        public int? Id { get; set; }
+        public int? Id_pessoa { get; set; }
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [StringLength(80, MinimumLength = 3, ErrorMessage = "O nome deve ter entre 3 e 80 caracteres.")]
@@ -22,7 +23,6 @@ namespace Shared.Models
 
         [Required(ErrorMessage = "O sexo é obrigatório.")]
         public string Sexo { get; set; }
-        
-        public Proprietario ProprietarioPessoa { get; set; } = new();
+                
     }
 }

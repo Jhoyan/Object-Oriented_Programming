@@ -9,6 +9,7 @@
       "Server/1.0.0": {
         "dependencies": {
           "Client": "1.0.0",
+          "Microsoft.AspNetCore.Components.DataAnnotations.Validation": "3.2.0-rc1.20223.4",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.10",
           "Microsoft.EntityFrameworkCore.Design": "9.0.3",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.3",
@@ -633,6 +634,17 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/8.0.12": {},
+      "Microsoft.AspNetCore.Components.DataAnnotations.Validation/3.2.0-rc1.20223.4": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Forms": "8.0.12"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.200.20.22304"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/8.0.12": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "8.0.12"
@@ -2539,6 +2551,13 @@
       "sha512": "sha512-pZVRMJrtscHDxZE9JvdlIWin5zPHhbCod/J6g7hP4tyLyxFI7w+2XT9KRR9oo5pSGBHOWl9SHvSoRTh6UVihBg==",
       "path": "microsoft.aspnetcore.components.analyzers/8.0.12",
       "hashPath": "microsoft.aspnetcore.components.analyzers.8.0.12.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.DataAnnotations.Validation/3.2.0-rc1.20223.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyZAAbuXuAVrh4Vii5Aq1N841iVhSjE4mTf/lVh+AgrKinaltE0IeEWPKv889j4ineX7i9BUiAqlGP7UpZwlnQ==",
+      "path": "microsoft.aspnetcore.components.dataannotations.validation/3.2.0-rc1.20223.4",
+      "hashPath": "microsoft.aspnetcore.components.dataannotations.validation.3.2.0-rc1.20223.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/8.0.12": {
       "type": "package",

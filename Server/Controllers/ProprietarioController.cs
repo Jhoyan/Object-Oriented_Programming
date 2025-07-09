@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
+using Server.DAO;
 
 namespace Server.Controllers
 {
@@ -13,6 +15,20 @@ namespace Server.Controllers
             try
             {
                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("listar")]
+        public IActionResult ListarProprietarios()
+        {            
+            try
+            {
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
+                var proprietarios = proprietarioDAO.ListProprietario();
+                return Ok(proprietarios);
             }
             catch (Exception ex)
             {

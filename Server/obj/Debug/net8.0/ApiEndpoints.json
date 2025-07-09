@@ -1,25 +1,15 @@
 [
   {
     "ContainingType": "Server.Controllers.PessoaController",
-    "Method": "Get",
-    "RelativePath": "api/Pessoa",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.PessoaController",
     "Method": "CreatePessoa",
-    "RelativePath": "api/Pessoa",
+    "RelativePath": "api/Pessoa/incluir",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "pessoa",
-        "Type": "Shared.Models.Pessoa",
+        "Name": "proprietario",
+        "Type": "Shared.Models.Proprietario",
         "IsRequired": true
       }
     ],
@@ -29,6 +19,16 @@
     "ContainingType": "Server.Controllers.ProprietarioController",
     "Method": "Get",
     "RelativePath": "api/Proprietario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.ProprietarioController",
+    "Method": "ListarProprietarios",
+    "RelativePath": "api/Proprietario/listar",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -630,6 +630,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.AssemblyInfo.cs
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.sourcelink.json
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
@@ -1053,4 +1054,3 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\refint\Client.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.pdb
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\ref\Client.dll
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.sourcelink.json

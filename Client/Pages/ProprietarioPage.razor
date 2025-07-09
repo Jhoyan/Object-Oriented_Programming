@@ -10,14 +10,56 @@
 
 <MudGrid Class="py-2">
     <MudItem xs="12" Class="d-flex justify-end">
-        <MudItem xs="2">
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogAsync">Novo Proprietário</MudButton>
+        <MudItem xs="1">
+            <MudButton Class="mb-3" Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogAsync">Adicionar</MudButton>
         </MudItem>
     </MudItem>
 </MudGrid>
 
+<MudItem xs="12">
+    <MudTable Items="@proprietarios" Hover="true" Filter="new Func<Proprietario,bool>(FilterFunc1)">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Periodic Elements</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="pesquisaString1" Placeholder="Pesquisar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <ColGroup>
+            <col style="width: 5%;" />
+            <col style="width: 30%;" />
+            <col style="width: 25%;" />
+            <col style="width: 25%;" />
+            <col style="width: 10%;" />
+        </ColGroup>
+        <HeaderContent>
+            <MudTh>Id</MudTh>
+            <MudTh>Nome</MudTh>
+            <MudTh>CPF</MudTh>
+            <MudTh>CNH</MudTh>
+            <MudTh Style="text-align:center">Ações</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id_proprietario</MudTd>
+            <MudTd DataLabel="Nome">@context.Nome</MudTd>
+            <MudTd DataLabel="CPF">@context.Cpf</MudTd>
+            <MudTd DataLabel="CNH">@context.Cnh</MudTd>
+            <MudTd Class="d-flex justify-content-center">
+                <MudButton Class="mr-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => OpenDialogAsync())">Editar</MudButton>
+                <MudButton Class="ml-2 mr-5" Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => DeleteProprietario(@context.Id_proprietario))">Excluir</MudButton>
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+</MudItem>
+
 
 @code {
+    private string pesquisaString1 = string.Empty;
+
+    private List<Proprietario> proprietarios = new List<Proprietario>();
+
+    protected override async Task OnInitializedAsync()
+    {        
+        proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");        
+    }
 
     private Task OpenDialogAsync()
     {
@@ -26,24 +68,28 @@
                 CloseOnEscapeKey = true
             };
         return DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CadastroDialog);
-    }
+    }   
 
-
-    Pessoa pessoa = new Pessoa();
-    Proprietario proprietario = new Proprietario();
-
-    private async Task InsertPessoa()
+    private async Task DeleteProprietario(int? id)
     {
-        string api = "api/proprietario/incluir";
-        HttpResponseMessage response = await httpClient.PostAsJsonAsync<Pessoa>(api, pessoa);
-        InsertProprietario();
+        return;
     }
+    
+    private bool FilterFunc1(Proprietario proprietarioTable) => FilterFunc(proprietarioTable, pesquisaString1);
 
-
-    private async Task InsertProprietario()
+    private bool FilterFunc(Proprietario proprietarioTable, string searchString)
     {
-        string api = "api/proprietario/incluir";
-        HttpResponseMessage response = await httpClient.PostAsJsonAsync<Proprietario>(api, proprietario);
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (proprietarioTable.Nome.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (proprietarioTable.Cpf.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (proprietarioTable.Cnh.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if ($"{proprietarioTable.Id_proprietario}".Contains(searchString))
+            return true;
+        return false;
     }
 
 }

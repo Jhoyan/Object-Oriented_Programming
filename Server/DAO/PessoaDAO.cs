@@ -6,19 +6,22 @@ namespace Server.DAO
 {
     public class PessoaDAO
     {
-        public void CreatePessoa(Pessoa pessoa)
+        public async void CreatePessoa(Proprietario proprietario)
         {
             string sql = "INSERT INTO pessoa(nome_pessoa, cpf_pessoa, dataNasc_pessoa, sexo_pessoa) VALUES(@Nome, @Cpf, @DataNasc, @Sexo);";
             MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
 
             try
             {
-                comando.Parameters.AddWithValue("@nome", pessoa.Nome);
-                comando.Parameters.AddWithValue("@CPF", pessoa.Cpf);
-                comando.Parameters.AddWithValue("@DataNasc", pessoa.DataNasc);
-                comando.Parameters.AddWithValue("@sexo", pessoa.Sexo);
+                comando.Parameters.AddWithValue("@nome", proprietario.Nome);
+                comando.Parameters.AddWithValue("@CPF", proprietario.Cpf);
+                comando.Parameters.AddWithValue("@DataNasc", proprietario.DataNasc);
+                comando.Parameters.AddWithValue("@sexo", proprietario.Sexo);
 
                 comando.ExecuteNonQuery();
+
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();                
+                proprietarioDAO.CreateProprietario(proprietario, (int)comando.LastInsertedId);
             }
             catch (MySqlException ex)
             {
