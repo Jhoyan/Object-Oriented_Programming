@@ -51,12 +51,15 @@ namespace Server.DAO
                     }
                 }
 
-                Conexao.Desconectar();
+                
                 return proprietarios;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+            finally {
+                Conexao.Desconectar();
             }
         }
         public Proprietario ListProprietarioPorId(int? id)
@@ -82,12 +85,16 @@ namespace Server.DAO
                     }
                 }
 
-                Conexao.Desconectar();
+                
                 return proprietarioPorId;
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+            finally
+            {
+                Conexao.Desconectar();
             }
         }
         public void UpdateProprietario(Proprietario proprietario)
@@ -105,6 +112,29 @@ namespace Server.DAO
             catch (MySqlException ex)
             {
                 throw new Exception($"Erro ao atualizar proprietario: {ex.Message}");
+            }
+            finally
+            {
+                Conexao.Desconectar();
+            }
+        }
+        public void DeleteProprietario(int? id_proprietario, int? id_pessoa)
+        {
+            string sql = "DELETE FROM proprietario WHERE id_proprietario = @id_proprietario;";
+            MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
+
+            try
+            {
+                comando.Parameters.AddWithValue("@id_proprietario", id_proprietario);
+
+                comando.ExecuteNonQuery();
+
+                PessoaDAO pessoaDAO = new PessoaDAO();
+                pessoaDAO.DeletePessoa(id_pessoa);
+            }
+            catch(MySqlException ex)
+            {
+                throw new Exception($"Erro ao excluir proprietario: {ex.Message}");
             }
             finally
             {

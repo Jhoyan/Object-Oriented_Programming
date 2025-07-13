@@ -18,7 +18,7 @@
     </MudItem>
 </MudGrid>
 
-<MudItem xs="12">
+<MudItem Class="mb-5" xs="12">
     <MudTable Items="@proprietarios" Hover="true" Filter="new Func<Proprietario,bool>(FilterFunc1)">
         <ToolBarContent>
             <MudText Typo="Typo.h6">Proprietários Cadastrados</MudText>
@@ -46,9 +46,13 @@
             <MudTd DataLabel="CNH">@context.Cnh</MudTd>
             <MudTd Class="d-flex justify-content-center">
                 <MudButton Class="mr-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => OpenDialogUpdate(context.Id_proprietario))">Editar</MudButton>
-                <MudButton Class="ml-2 mr-5" Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => DeleteProprietario(@context.Id_proprietario))">Excluir</MudButton>
+                <MudButton Class="ml-2 mr-5" Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => OpenDialogDelete(@context.Id_proprietario))">Excluir</MudButton>
             </MudTd>
         </RowTemplate>
+        <PagerContent>
+            <MudTablePager PageSizeOptions="new int[] { 5, 10, 20 }" PageSize="10" />
+            <MudText Typo="Typo.caption" Class="ml-2">Total de proprietários: @proprietarios.Count</MudText>
+        </PagerContent>
     </MudTable>
 </MudItem>
 
@@ -64,37 +68,69 @@
         proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
     }
 
-    private Task OpenDialogCreate()
+    private async Task OpenDialogCreate()
     {
         var CreateDialog = new DialogOptions()
             {
                 CloseOnEscapeKey = true
             };
-        return DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CreateDialog);
+        var dialog = await DialogService.ShowAsync<ProprietarioCadastrar>("Cadastro de Proprietário", CreateDialog);
+
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+            StateHasChanged();
+        }
+    }
+
+    private async Task OpenDialogDelete(int? id_proprietario)
+    {
+        var api = $"api/proprietario/listarPorId/{id_proprietario}";
+        var result = await httpClient.GetFromJsonAsync<Proprietario>(api);
+
+        var parameters = new DialogParameters
+        {
+            { "proprietarioPorId", result ?? new Proprietario() }
+        };
+
+        var DeleteDialog = new DialogOptions()
+            {
+                CloseOnEscapeKey = true
+            };
+
+        var dialog = await DialogService.ShowAsync<ProprietarioExcluir>("Exclusão de Proprietário", parameters, DeleteDialog);
+
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+            StateHasChanged();
+        }
     }
 
     private async Task OpenDialogUpdate(int? id_proprietario)
-    {        
+    {
         var api = $"api/proprietario/listarPorId/{id_proprietario}";
         var result = await httpClient.GetFromJsonAsync<Proprietario>(api);
 
         var parameters = new DialogParameters
     {
         { "proprietarioPorId", result ?? new Proprietario() }
-    };        
+    };
 
         var UpdateDialog = new DialogOptions()
             {
                 CloseOnEscapeKey = true
             };
-        await DialogService.ShowAsync<ProprietarioEditar>("Edição de Proprietário", parameters, UpdateDialog);
+        var dialog = await DialogService.ShowAsync<ProprietarioEditar>("Edição de Proprietário", parameters, UpdateDialog);
 
-        StateHasChanged();
-    }
-
-    private async Task DeleteProprietario(int? id_proprietario)
-    {
-        return;
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+            StateHasChanged();
+        }
     }
 
     private bool FilterFunc1(Proprietario proprietarioTable) => FilterFunc(proprietarioTable, pesquisaString1);

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using Server.DAO;
+using Shared.Models;
 
 namespace Server.Controllers
 {
@@ -44,6 +45,21 @@ namespace Server.Controllers
                 ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
                 var proprietarioPorId = proprietarioDAO.ListProprietarioPorId(id);
                 return Ok(proprietarioPorId);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpDelete("excluir/{id_proprietario}/{id_pessoa}")]
+        public IActionResult ExcluirProprietario([FromRoute] int? id_proprietario,[FromRoute] int? id_pessoa)
+        {
+            try
+            {
+                ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
+                proprietarioDAO.DeleteProprietario(id_proprietario, id_pessoa);
+                return Ok("Proprietário excluído com sucesso.");
             }
             catch (Exception ex)
             {

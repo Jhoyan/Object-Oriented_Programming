@@ -43,6 +43,27 @@
   },
   {
     "ContainingType": "Server.Controllers.ProprietarioController",
+    "Method": "ExcluirProprietario",
+    "RelativePath": "api/Proprietario/excluir/{id_proprietario}/{id_pessoa}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_proprietario",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "id_pessoa",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.ProprietarioController",
     "Method": "ListarProprietarios",
     "RelativePath": "api/Proprietario/listar",
     "HttpMethod": "GET",

@@ -3,32 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietariopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietariopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\veiculospage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\veiculospage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietariocadastrar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietariocadastrar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\veiculodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\veiculodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietarioeditar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietarioeditar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D636EA40-EE49-469C-B149-1AB125341EDD}|Shared\\Shared.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\shared\\models\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D636EA40-EE49-469C-B149-1AB125341EDD}|Shared\\Shared.csproj|solutionrelative:shared\\models\\veiculo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\proprietariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\proprietariodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\modelodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\modelodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\tipoveiculodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\tipoveiculodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\cordao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\cordao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietariocadastrar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietariocadastrar.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietariopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietariopage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\client\\pages\\proprietarioexcluir.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0B5350F3-BE31-4132-9C7E-8D49167C68E3}|Client\\Client.csproj|solutionrelative:client\\pages\\proprietarioexcluir.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\controllers\\proprietariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\controllers\\proprietariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\dao\\pessoadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\dao\\pessoadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|c:\\users\\user\\desktop\\documentos \u00E1rea de trabalho\\faculdade jhoyan\\3\u00BA per\u00EDodo\\programa\u00E7\u00E3o orientada a objetos\\projetohosted\\server\\controllers\\pessoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7144A385-067F-42AB-A08C-BC87678A7823}|Server\\Server.csproj|solutionrelative:server\\controllers\\pessoacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,9 +53,61 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 208,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VeiculosPage.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\VeiculosPage.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\VeiculosPage.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\VeiculosPage.razor",
+              "RelativeToolTip": "Client\\Pages\\VeiculosPage.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-13T03:16:20.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TipoVeiculoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\TipoVeiculoDAO.cs",
+              "RelativeDocumentMoniker": "Server\\DAO\\TipoVeiculoDAO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\TipoVeiculoDAO.cs",
+              "RelativeToolTip": "Server\\DAO\\TipoVeiculoDAO.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAswEAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:10:21.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModeloDAO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\ModeloDAO.cs",
+              "RelativeDocumentMoniker": "Server\\DAO\\ModeloDAO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\ModeloDAO.cs",
+              "RelativeToolTip": "Server\\DAO\\ModeloDAO.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAgwDYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:04:10.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CorDAO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\CorDAO.cs",
+              "RelativeDocumentMoniker": "Server\\DAO\\CorDAO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\CorDAO.cs",
+              "RelativeToolTip": "Server\\DAO\\CorDAO.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAiwDYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T03:02:42.311Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -48,88 +116,87 @@
               "RelativeDocumentMoniker": "Server\\DAO\\ProprietarioDAO.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\ProprietarioDAO.cs",
               "RelativeToolTip": "Server\\DAO\\ProprietarioDAO.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAiwFAAAABKAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAADwv0AAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T23:12:27.399Z",
+              "WhenOpened": "2025-07-13T03:02:12.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProprietarioController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\ProprietarioController.cs",
-              "RelativeDocumentMoniker": "Server\\Controllers\\ProprietarioController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\ProprietarioController.cs",
-              "RelativeToolTip": "Server\\Controllers\\ProprietarioController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwB0AAAAiAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Veiculo.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Shared\\Models\\Veiculo.cs",
+              "RelativeDocumentMoniker": "Shared\\Models\\Veiculo.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Shared\\Models\\Veiculo.cs",
+              "RelativeToolTip": "Shared\\Models\\Veiculo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T17:48:53.373Z",
+              "WhenOpened": "2025-07-12T21:20:11.549Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "VeiculoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\VeiculoDAO.cs",
+              "RelativeDocumentMoniker": "Server\\DAO\\VeiculoDAO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\VeiculoDAO.cs",
+              "RelativeToolTip": "Server\\DAO\\VeiculoDAO.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAYwDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T21:20:21.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ProprietarioPage.razor",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioPage.razor",
               "RelativeDocumentMoniker": "Client\\Pages\\ProprietarioPage.razor",
               "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioPage.razor",
               "RelativeToolTip": "Client\\Pages\\ProprietarioPage.razor",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAgwFMAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-04T23:11:26.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ProprietarioCadastrar.razor",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioCadastrar.razor",
               "RelativeDocumentMoniker": "Client\\Pages\\ProprietarioCadastrar.razor",
               "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioCadastrar.razor",
               "RelativeToolTip": "Client\\Pages\\ProprietarioCadastrar.razor",
-              "ViewState": "AgIAALMAAAAAAAAAAAAAAMsAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMsAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-06T21:30:45.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProprietarioEditar.razor",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioEditar.razor",
-              "RelativeDocumentMoniker": "Client\\Pages\\ProprietarioEditar.razor",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioEditar.razor",
-              "RelativeToolTip": "Client\\Pages\\ProprietarioEditar.razor",
-              "ViewState": "AgIAALkAAAAAAAAAAAAAAM0AAAAzAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ProprietarioExcluir.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioExcluir.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\ProprietarioExcluir.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Client\\Pages\\ProprietarioExcluir.razor",
+              "RelativeToolTip": "Client\\Pages\\ProprietarioExcluir.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T16:54:34.725Z",
+              "WhenOpened": "2025-07-10T22:37:12.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PessoaDAO.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\PessoaDAO.cs",
-              "RelativeDocumentMoniker": "Server\\DAO\\PessoaDAO.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\DAO\\PessoaDAO.cs",
-              "RelativeToolTip": "Server\\DAO\\PessoaDAO.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAiwDEAAABIAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "ProprietarioController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\ProprietarioController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\ProprietarioController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\ProprietarioController.cs",
+              "RelativeToolTip": "Server\\Controllers\\ProprietarioController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAmwEUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T18:14:05.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PessoaController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\PessoaController.cs",
-              "RelativeDocumentMoniker": "Server\\Controllers\\PessoaController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Documentos \u00E1rea de trabalho\\Faculdade Jhoyan\\3\u00BA Per\u00EDodo\\Programa\u00E7\u00E3o Orientada a Objetos\\ProjetoHosted\\Server\\Controllers\\PessoaController.cs",
-              "RelativeToolTip": "Server\\Controllers\\PessoaController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAuwBwAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-05T18:15:38.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-05T17:48:53.373Z"
             }
           ]
         }

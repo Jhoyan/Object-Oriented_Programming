@@ -1,0 +1,44 @@
+﻿@using Shared.Models;
+@inject HttpClient httpClient;
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        Excluir proprietário!
+    </TitleContent>
+    <DialogContent>
+        Tem certeza que deseja excluir esse proprietário?
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">OK</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [Parameter]
+    public Proprietario proprietarioPorId { get; set; }
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+   
+    private async void Submit()
+    {
+        string api = $"api/proprietario/excluir/{proprietarioPorId.Id_proprietario}/{proprietarioPorId.Id_pessoa}";
+        var response = await httpClient.DeleteAsync(api);
+
+        if(response.IsSuccessStatusCode)
+        {
+            Snackbar.Add("O proprietário foi excluído com sucesso", Severity.Success);
+        }
+        else
+        {
+            Snackbar.Add("Erro ao atualizar pessoa", Severity.Error);
+            return;
+        }
+
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+    private void Cancel() => MudDialog.Cancel();
+}

@@ -59,5 +59,25 @@ namespace Server.DAO
                 Conexao.Desconectar();
             }
         }
+        public void DeletePessoa(int? id_pessoa)
+        {
+            string sql = "DELETE FROM pessoa WHERE id_pessoa = @id_pessoa;";
+            MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
+
+            try
+            {
+                comando.Parameters.AddWithValue("@id_pessoa", id_pessoa);
+
+                comando.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw new Exception($"Erro ao deletar pessoa: {ex.Message}");
+            }
+            finally
+            {
+                Conexao.Desconectar();
+            }
+        }
     }
 }
