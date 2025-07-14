@@ -60,7 +60,7 @@ namespace Server.Controllers
                 ProprietarioDAO proprietarioDAO = new ProprietarioDAO();
                 proprietarioDAO.DeleteProprietario(id_proprietario, id_pessoa);
                 return Ok("Proprietário excluído com sucesso.");
-            }
+            }            
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");

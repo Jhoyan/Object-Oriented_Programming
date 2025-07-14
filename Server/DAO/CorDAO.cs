@@ -7,7 +7,7 @@ namespace Server.DAO
 {
     public class CorDAO
     {
-        public List<Cor> ListarCores()
+        public List<Cor> ListCores()
         {
             List<Cor> Cores = new List<Cor>();
 
@@ -28,7 +28,7 @@ namespace Server.DAO
                         Cores.Add(cor);
                     }
                 }
-                
+
                 return Cores;
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace Server.DAO
             finally
             {
                 Conexao.Desconectar();
-            }            
+            }
         }
         public Cor ListarCorPorId(int id_cor)
         {
@@ -70,4 +70,5 @@ namespace Server.DAO
                 Conexao.Desconectar();
             }
         }
+    }
 }

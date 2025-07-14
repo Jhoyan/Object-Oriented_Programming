@@ -1,3 +1,10 @@
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.AssemblyInfo.cs
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.sourcelink.json
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Client.pdb
@@ -17,6 +24,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.wasm
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.CSharp.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Abstractions.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Binder.wasm
@@ -36,6 +44,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Primitives.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.wasm
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.Core.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Win32.Primitives.wasm
@@ -238,6 +247,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Linq.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Reflection.Primitives.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.wasm.gz
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\MudBlazor.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Text.Encoding.CodePages.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Text.Encoding.Extensions.wasm.gz
@@ -369,6 +379,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Extensions.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Serialization.wasm.gz
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Buffers.wasm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.Specialized.wasm.gz
@@ -425,6 +436,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.AspNetCore.Components.WebAssembly.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
@@ -443,6 +455,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\MudBlazor.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\System.IO.Pipelines.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.CSharp.dll
@@ -624,19 +637,13 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\icudt_no_CJK.dat
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Shared.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Shared.pdb
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.csproj.AssemblyReference.cache
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.AssemblyInfo.cs
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.sourcelink.json
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Authorization.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Forms.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.Web.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Components.WebAssembly.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.Metadata.wasm
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.WebUtilities.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Configuration.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Configuration.Abstractions.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Configuration.Binder.wasm
@@ -655,6 +662,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Primitives.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.WebAssembly.wasm
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Net.Http.Headers.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\MudBlazor.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\System.IO.Pipelines.wasm
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.CSharp.wasm
@@ -847,6 +855,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\y9x92c78xf.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\w3eg7gi8yy.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\35j854zkal.gz
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\sg2imsrtap.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\9gyy230ue2.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\ulnsuhlydf.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\dz5d8h1nig.gz
@@ -865,6 +874,7 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\dqdty3o9vm.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\k86xsyc0q3.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\i2xssgm1b0.gz
+C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\6p1prusvqp.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\6se5vlmc6b.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\56t6ybx4t4.gz
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\webip4evz4.gz
@@ -1054,13 +1064,3 @@ C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\refint\Client.dll
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\Client.pdb
 C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\ref\Client.dll
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Net.Http.Headers.wasm.gz
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.wasm.gz
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.AspNetCore.WebUtilities.dll
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\bin\Debug\net8.0\Microsoft.Net.Http.Headers.dll
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.AspNetCore.WebUtilities.wasm
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\webcil\Microsoft.Net.Http.Headers.wasm
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\sg2imsrtap.gz
-C:\Users\User\Desktop\Documentos área de trabalho\Faculdade Jhoyan\3º Período\Programação Orientada a Objetos\ProjetoHosted\Client\obj\Debug\net8.0\compressed\6p1prusvqp.gz

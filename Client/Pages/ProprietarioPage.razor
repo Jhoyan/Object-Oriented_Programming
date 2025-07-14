@@ -65,7 +65,14 @@
 
     protected override async Task OnInitializedAsync()
     {
-        proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+        try
+        {
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Erro ao carregar os proprietários: {ex.Message}", Severity.Error);
+        }
     }
 
     private async Task OpenDialogCreate()

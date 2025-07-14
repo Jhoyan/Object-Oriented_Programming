@@ -1,5 +1,35 @@
 [
   {
+    "ContainingType": "Server.Controllers.CorController",
+    "Method": "Get",
+    "RelativePath": "api/Cor",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.CorController",
+    "Method": "ListarCores",
+    "RelativePath": "api/Cor/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.ModeloController",
+    "Method": "ListarModelos",
+    "RelativePath": "api/Modelo/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.Controllers.PessoaController",
     "Method": "UpdatePessoa",
     "RelativePath": "api/Pessoa/atualizar",
@@ -76,6 +106,73 @@
     "ContainingType": "Server.Controllers.ProprietarioController",
     "Method": "ListarProprietariosPorId",
     "RelativePath": "api/Proprietario/listarPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.TipoVeiculoController",
+    "Method": "ListarTiposVeiculo",
+    "RelativePath": "api/TipoVeiculo/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "Get",
+    "RelativePath": "api/Veiculo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "ExcluirVeiculo",
+    "RelativePath": "api/Veiculo/excluir/{id_veiculo}/{id_proprietario}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_veiculo",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      },
+      {
+        "Name": "id_proprietario",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "ListarVeiculos",
+    "RelativePath": "api/Veiculo/listar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "ListarVeiculosPorId",
+    "RelativePath": "api/Veiculo/listarPorId/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace Shared.Models
     public class Modelo
     {
         public int Id_modelo { get; set; }
+        [Required(ErrorMessage = "O modelo é obrigatório.")]
         public string Nome_modelo { get; set; }
     }
 }

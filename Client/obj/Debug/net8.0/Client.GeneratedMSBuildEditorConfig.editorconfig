@@ -49,8 +49,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvcHJpZXRhcmlvUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/VeiculosPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVpY3Vsb3NQYWdlLnJhem9y
+[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/VeiculoCadastrar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVpY3Vsb0NhZGFzdHJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/Pages/VeiculoPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVpY3Vsb1BhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/User/Desktop/Documentos área de trabalho/Faculdade Jhoyan/3º Período/Programação Orientada a Objetos/ProjetoHosted/Client/_Imports.razor]

@@ -1,0 +1,145 @@
+﻿@using Shared.Models;
+@inject IDialogService IDialogService;
+@inject ISnackbar Snackbar
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient httpClient
+
+<EditForm Model="@veiculo" OnValidSubmit="CadastrarVeiculo" OnInvalidSubmit="OnInvalidSubmit">
+    <DataAnnotationsValidator />
+    <MudDialog Style="width: 900px; height: auto; overflow-y:scroll;">
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">Cadastrar Veículo</MudText>
+        </TitleContent>
+
+        <DialogContent>
+            <MudPaper Class="d-flex flex-column" Elevation="0">
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="veiculo.Placa_veiculo" For="@(() => veiculo.Placa_veiculo)" Label="Placa*" Variant="Variant.Outlined" />
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="veiculo.Chassi_veiculo" For="@(() => veiculo.Chassi_veiculo)" Label="Chassi*" Variant="Variant.Outlined" />
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudAutocomplete SearchFunc="AutoCompleteModelo" @bind-Value="@veiculo.modelo_veiculo.Nome_modelo" T="string" Variant="Variant.Outlined" Label="Modelo*" />
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudAutocomplete SearchFunc="AutoCompleteCores" @bind-Value="@veiculo.cor_veiculo.Nome_cor" T="string" Variant="Variant.Outlined" Label="Cor" />
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudAutocomplete SearchFunc="AutoCompleteTipoVeiculo" @bind-Value="@veiculo.tipoVeiculo_veiculo.Nome_tipoVeiculo" T="string" Variant="Variant.Outlined" Label="Tipo de Veículo*"/>
+                    </MudItem>
+                    <MudItem xs="6">
+
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+
+                </MudPaper>
+            </MudPaper>
+        </DialogContent>
+
+        <DialogActions>
+            <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Cadastrar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</EditForm>
+
+@code {
+    Veiculo veiculo = new Veiculo
+        {
+            cor_veiculo = new Cor(),
+            modelo_veiculo = new Modelo(),
+            proprietario_veiculo = new Proprietario(),
+            tipoVeiculo_veiculo = new TipoVeiculo()
+        };
+    List<Cor> cores = new List<Cor>();
+    List<Modelo> modelos = new List<Modelo>();
+    List<Proprietario> proprietarios = new List<Proprietario>();
+    List<TipoVeiculo> tiposveiculo = new List<TipoVeiculo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            cores = await httpClient.GetFromJsonAsync<List<Cor>>("api/Cor/listar");
+            modelos = await httpClient.GetFromJsonAsync<List<Modelo>>("api/modelo/listar");
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+            tiposveiculo = await httpClient.GetFromJsonAsync<List<TipoVeiculo>>("api/tipoveiculo/listar");
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add("Erro ao carregar dados: " + ex.Message, Severity.Error);
+        }
+    }
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+    private void Cancelar()
+    {
+        MudDialog.Cancel();
+    }
+
+    private async Task CadastrarVeiculo()
+    {
+        string api = "api/veiculo/incluir";
+        HttpResponseMessage httpResponse = await httpClient.PostAsJsonAsync<Veiculo>(api, veiculo);
+
+        if (!httpResponse.IsSuccessStatusCode)
+        {
+            Snackbar.Add("Erro ao cadastrar o veículo", Severity.Error);
+            return;
+        }
+        else
+        {
+            MudDialog.Close(DialogResult.Ok(true));
+            Snackbar.Add("O veículo foi cadastrado com sucesso", Severity.Success);
+        }
+    }
+    public void OnInvalidSubmit()
+    {
+        //Snackbar.Add("Erro ao cadastrar veículo", Severity.Error);
+    }
+
+    private async Task<IEnumerable<string>> AutoCompleteCores(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(valor))
+        {
+            return cores.Select(c => c.Nome_cor);
+        }
+
+        return cores
+            .Where(c => c.Nome_cor.Contains(valor, StringComparison.OrdinalIgnoreCase))
+            .Select(c => c.Nome_cor);
+    }
+    private async Task<IEnumerable<string>> AutoCompleteModelo(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(valor))
+        {
+            return modelos.Select(c => c.Nome_modelo);
+        }
+
+        return modelos
+            .Where(c => c.Nome_modelo.Contains(valor, StringComparison.OrdinalIgnoreCase))
+            .Select(c => c.Nome_modelo);
+    }
+    private async Task<IEnumerable<string>> AutoCompleteTipoVeiculo(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrEmpty(valor))
+        {
+            return tiposveiculo.Select(c => c.Nome_tipoVeiculo);
+        }
+
+        return tiposveiculo
+            .Where(c => c.Nome_tipoVeiculo.Contains(valor, StringComparison.OrdinalIgnoreCase))
+            .Select(c => c.Nome_tipoVeiculo);
+    }
+}
+

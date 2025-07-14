@@ -1,0 +1,122 @@
+﻿@page "/veiculo"
+
+@inject HttpClient httpClient
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavManager
+@using Microsoft.AspNetCore.WebUtilities
+@using Shared.Models;
+
+
+<h3 class="text-white m-4">Veículos</h3>
+
+<MudGrid Class="py-2">
+
+    <MudItem xs="12" Class="d-flex justify-end">
+        <MudItem xs="1">
+            <MudButton Class="mb-3" Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialogCreate">Adicionar</MudButton>
+        </MudItem>
+    </MudItem>
+</MudGrid>
+
+<MudItem Class="mb-5" xs="12">
+    <MudTable Items="@veiculos" Hover="true" Filter="new Func<Veiculo,bool>(FilterFunc1)">
+        <ToolBarContent>
+            <MudText Typo="Typo.h6">Veículos Cadastrados</MudText>
+            <MudSpacer />
+            <MudTextField @bind-Value="pesquisaString1" Placeholder="Pesquisar" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        </ToolBarContent>
+        <ColGroup>
+            <col style="width: 5%;" />
+            <col style="width: 15%;" />
+            <col style="width: 20%;" />
+            <col style="width: 25%;" />
+            <col style="width: 20%;" />
+            <col style="width: 10%;" />
+        </ColGroup>
+        <HeaderContent>
+            <MudTh>Id</MudTh>
+            <MudTh>Placa</MudTh>
+            <MudTh>Chassi</MudTh>
+            <MudTh>Proprietário</MudTh>
+            <MudTh>CPF Proprietário</MudTh>
+            <MudTh Style="text-align:center">Ações</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Id">@context.Id_veiculo</MudTd>
+            <MudTd DataLabel="Placa">@context.Placa_veiculo</MudTd>
+            <MudTd DataLabel="Chassi">@context.Chassi_veiculo</MudTd>
+            <MudTd DataLabel="Proprietario">@context.proprietario_veiculo.Nome</MudTd>
+            <MudTd DataLabel="CPF Proprietário">@context.proprietario_veiculo.Cpf</MudTd>
+            <MudTd Class="d-flex justify-content-center">
+                <MudButton Class="mr-2" Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => OpenDialogUpdate(context.Id_veiculo))">Editar</MudButton>
+                <MudButton Class="ml-2 mr-5" Variant="Variant.Filled" Color="Color.Error" OnClick="@(() => OpenDialogDelete(@context.Id_veiculo))">Excluir</MudButton>
+            </MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager PageSizeOptions="new int[] { 5, 10, 20 }" PageSize="10" />
+            <MudText Typo="Typo.caption" Class="ml-2">Total de proprietários: @veiculos.Count</MudText>
+        </PagerContent>
+    </MudTable>
+</MudItem>
+
+@code {
+    string pesquisaString1 = string.Empty;
+    List<Veiculo> veiculos = new List<Veiculo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            veiculos = await httpClient.GetFromJsonAsync<List<Veiculo>>("api/veiculo/listar");
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add($"Erro ao carregar veículos: {ex.Message}", Severity.Error);
+        }
+    }
+
+    private async Task OpenDialogCreate()
+    {
+        var CreateDialog = new DialogOptions()
+            {
+                CloseOnEscapeKey = true
+            };
+        var dialog = await DialogService.ShowAsync<VeiculoCadastrar>("Cadastro de Veículo", CreateDialog);
+
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            veiculos = await httpClient.GetFromJsonAsync<List<Veiculo>>("api/veiculo/listar");
+            StateHasChanged();
+        }
+    }
+
+    public async Task OpenDialogUpdate(int id_veiculo)
+    {
+
+    }
+
+    public async Task OpenDialogDelete(int id_veiculo)
+    {
+
+    }
+
+
+    private bool FilterFunc1(Veiculo veiculoTable) => FilterFunc(veiculoTable, pesquisaString1);
+
+    private bool FilterFunc(Veiculo veiculoTable, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (veiculoTable.Chassi_veiculo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (veiculoTable.Placa_veiculo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (veiculoTable.proprietario_veiculo.Nome.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if ($"{veiculoTable.Id_veiculo}".Contains(searchString))
+            return true;
+        return false;
+    }
+}
