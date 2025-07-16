@@ -92,7 +92,11 @@ namespace Server.DAO
                         veiculo.FK_id_proprietario = reader.GetInt32("FK_id_proprietario");
                         veiculo.FK_id_modelo = reader.GetInt32("FK_id_modelo");
                         veiculo.FK_id_cor = reader.GetInt32("FK_id_cor");
-                        veiculo.FK_id_tipoveiculo = reader.GetInt32("FK_id_tipoveiculo");                        
+                        veiculo.FK_id_tipoveiculo = reader.GetInt32("FK_id_tipoveiculo");
+                        veiculo.cor_veiculo = new CorDAO().ListarCorPorId(veiculo.FK_id_cor);
+                        veiculo.modelo_veiculo = new ModeloDAO().ListarModeloPorId(veiculo.FK_id_modelo);
+                        veiculo.tipoVeiculo_veiculo = new TipoVeiculoDAO().ListarTipoVeiculoPorId(veiculo.FK_id_tipoveiculo);
+                        veiculo.proprietario_veiculo = new ProprietarioDAO().ListProprietarioPorId(veiculo.FK_id_proprietario);
                     }
                 }
 
@@ -109,7 +113,7 @@ namespace Server.DAO
         }
         public void UpdateVeiculo(Veiculo veiculo)
         {
-            string sql = "UPDATE veiculo SET chassi_veiculo = @chassi, @placa_veiculo = @placa, @FK_id_proprietario = @proprietario, @FK_id_modelo = @modelo, FK_id_cor = @cor, FK_id_tipoveiculo = @tipoveiculo";
+            string sql = "UPDATE veiculo SET chassi_veiculo = @chassi, placa_veiculo = @placa, FK_id_proprietario = @proprietario, FK_id_modelo = @modelo, FK_id_cor = @cor, FK_id_tipoveiculo = @tipoveiculo WHERE id_veiculo = @id_veiculo";
             MySqlCommand comando = new MySqlCommand(sql, Conexao.Conectar());
 
             try
@@ -120,6 +124,7 @@ namespace Server.DAO
                 comando.Parameters.AddWithValue("@modelo", veiculo.FK_id_modelo);
                 comando.Parameters.AddWithValue("@cor", veiculo.FK_id_cor);
                 comando.Parameters.AddWithValue("@tipoveiculo", veiculo.FK_id_tipoveiculo);
+                comando.Parameters.AddWithValue("@id_veiculo", veiculo.Id_veiculo);
 
                 comando.ExecuteNonQuery();
             }

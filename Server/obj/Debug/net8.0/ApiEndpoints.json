@@ -140,6 +140,22 @@
   },
   {
     "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "AtualizarVeiculo",
+    "RelativePath": "api/Veiculo/atualizar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "veiculo",
+        "Type": "Shared.Models.Veiculo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
     "Method": "ExcluirVeiculo",
     "RelativePath": "api/Veiculo/excluir/{id_veiculo}",
     "HttpMethod": "DELETE",

@@ -1,0 +1,190 @@
+﻿@using Shared.Models;
+@inject IDialogService IDialogService;
+@inject ISnackbar Snackbar
+@using System.Text.RegularExpressions
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient httpClient
+
+
+<EditForm Model="@veiculoPorId" OnValidSubmit="EditarVeiculo" OnInvalidSubmit="OnInvalidSubmit">
+    <DataAnnotationsValidator />
+    <MudDialog Style="width: 900px; height: auto; overflow-y:scroll;">
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">Cadastrar Veículo</MudText>
+        </TitleContent>
+
+        <DialogContent>
+            <MudPaper Class="d-flex flex-column" Elevation="0">
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="veiculoPorId.Placa_veiculo" For="@(() => veiculoPorId.Placa_veiculo)" Label="Placa*" Variant="Variant.Outlined" />
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudTextField @bind-Value="veiculoPorId.Chassi_veiculo" For="@(() => veiculoPorId.Chassi_veiculo)" Label="Chassi*" Variant="Variant.Outlined" />
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudAutocomplete T="Modelo"
+                                         @bind-Value="veiculoPorId.modelo_veiculo"
+                                         SearchFunc="AutoCompleteModelo"
+                                         ToStringFunc="m => m.Nome_modelo"
+                                         Variant="Variant.Outlined"
+                                         Label="Modelo*" />
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudAutocomplete T="Cor"
+                                         @bind-Value="veiculoPorId.cor_veiculo"
+                                         SearchFunc="AutoCompleteCores"
+                                         ToStringFunc="c => c.Nome_cor"
+                                         Variant="Variant.Outlined"
+                                         Label="Cor*" />
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+                    <MudItem xs="6">
+                        <MudAutocomplete T="TipoVeiculo"
+                                         @bind-Value="veiculoPorId.tipoVeiculo_veiculo"
+                                         SearchFunc="AutoCompleteTipoVeiculo"
+                                         ToStringFunc="t => t.Nome_tipoVeiculo"
+                                         Variant="Variant.Outlined"
+                                         Label="Tipo de Veículo*" />
+                    </MudItem>
+                    <MudItem xs="6">
+                        <MudAutocomplete T="Proprietario"
+                                         @bind-Value="veiculoPorId.proprietario_veiculo"
+                                         SearchFunc="AutoCompleteProprietario"
+                                         ToStringFunc="FormatarProprietario"
+                                         Variant="Variant.Outlined"
+                                         Label="Proprietário*" />
+                    </MudItem>
+                </MudPaper>
+                <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
+
+                </MudPaper>
+            </MudPaper>
+        </DialogContent>
+
+        <DialogActions>
+            <MudButton Class="m-3" OnClick="Cancelar">Cancelar</MudButton>
+            <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto m-3">Editar</MudButton>
+        </DialogActions>
+    </MudDialog>
+</EditForm>
+
+@code {
+    private string FormatarProprietario(Proprietario p)
+    {
+        if (string.IsNullOrWhiteSpace(p?.Nome) && string.IsNullOrWhiteSpace(p?.Cpf))
+            return string.Empty;
+
+        return $"{p.Nome} - {p.Cpf}";
+    }
+
+    
+    List<Cor> cores = new List<Cor>();
+    List<Modelo> modelos = new List<Modelo>();
+    List<Proprietario> proprietarios = new List<Proprietario>();
+    List<TipoVeiculo> tiposveiculo = new List<TipoVeiculo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            cores = await httpClient.GetFromJsonAsync<List<Cor>>("api/Cor/listar");
+            modelos = await httpClient.GetFromJsonAsync<List<Modelo>>("api/modelo/listar");
+            proprietarios = await httpClient.GetFromJsonAsync<List<Proprietario>>("api/proprietario/listar");
+            tiposveiculo = await httpClient.GetFromJsonAsync<List<TipoVeiculo>>("api/tipoveiculo/listar");
+        }
+        catch (Exception ex)
+        {
+            Snackbar.Add("Erro ao carregar dados: " + ex.Message, Severity.Error);
+        }
+    }
+
+    [Parameter]
+    public Veiculo veiculoPorId { get; set; }
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+
+    private void Cancelar()
+    {
+        MudDialog.Cancel();
+    }    
+
+    private async Task EditarVeiculo()
+    {
+        if (veiculoPorId.cor_veiculo.Nome_cor == null || veiculoPorId.modelo_veiculo.Nome_modelo == null || veiculoPorId.tipoVeiculo_veiculo.Nome_tipoVeiculo == null || veiculoPorId.proprietario_veiculo.Nome == null)
+        {
+            Snackbar.Add("Preencha todos os campos obrigatórios", Severity.Warning);
+            return;
+        }
+
+        veiculoPorId.FK_id_cor = veiculoPorId.cor_veiculo.Id_cor;
+        veiculoPorId.FK_id_modelo = veiculoPorId.modelo_veiculo.Id_modelo;
+        veiculoPorId.FK_id_tipoveiculo = veiculoPorId.tipoVeiculo_veiculo.Id_tipoVeiculo;
+        veiculoPorId.FK_id_proprietario = Convert.ToInt32(veiculoPorId.proprietario_veiculo.Id_proprietario);
+
+        // Limpar as propriedades que não são necessárias para o envio
+        veiculoPorId.cor_veiculo = null;
+        veiculoPorId.modelo_veiculo = null;
+        veiculoPorId.tipoVeiculo_veiculo = null;
+        veiculoPorId.proprietario_veiculo = null;
+        
+
+        string api = "api/veiculo/atualizar";
+        HttpResponseMessage httpResponse = await httpClient.PutAsJsonAsync<Veiculo>(api, veiculoPorId);
+        string responseContent = await httpResponse.Content.ReadAsStringAsync();
+
+
+        if (!httpResponse.IsSuccessStatusCode)
+        {
+            Snackbar.Add($"Erro ao editar o veículo: {responseContent}", Severity.Error);
+            return;
+        }
+        else
+        {
+            MudDialog.Close(DialogResult.Ok(true));
+            Snackbar.Add("O veículo foi atualizado com sucesso", Severity.Success);
+        }
+
+    }
+    private void OnInvalidSubmit()
+    {
+        //Snackbar.Add("Erro", Severity.Error);
+    }
+
+    private async Task<IEnumerable<Cor>> AutoCompleteCores(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return cores;
+
+        return cores.Where(c => c.Nome_cor.Contains(valor, StringComparison.OrdinalIgnoreCase));
+    }
+    private async Task<IEnumerable<Modelo>> AutoCompleteModelo(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return modelos;
+
+        return modelos.Where(m => m.Nome_modelo.Contains(valor, StringComparison.OrdinalIgnoreCase));
+    }
+    private async Task<IEnumerable<TipoVeiculo>> AutoCompleteTipoVeiculo(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return tiposveiculo;
+
+        return tiposveiculo.Where(t => t.Nome_tipoVeiculo.Contains(valor, StringComparison.OrdinalIgnoreCase));
+    }
+    private async Task<IEnumerable<Proprietario>> AutoCompleteProprietario(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return proprietarios;
+
+        return proprietarios.Where(p =>
+            p.Nome.Contains(valor, StringComparison.OrdinalIgnoreCase) ||
+            p.Cpf.Contains(valor));
+    }
+}

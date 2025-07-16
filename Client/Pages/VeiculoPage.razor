@@ -94,7 +94,26 @@
 
     public async Task OpenDialogUpdate(int id_veiculo)
     {
+        var api = $"api/veiculo/listarPorId/{id_veiculo}";
+        var result = await httpClient.GetFromJsonAsync<Veiculo>(api);
 
+        var parameters = new DialogParameters
+    {
+        { "veiculoPorId", result ?? new Veiculo() }
+    };
+
+        var UpdateDialog = new DialogOptions()
+            {
+                CloseOnEscapeKey = true
+            };
+        var dialog = await DialogService.ShowAsync<VeiculoEditar>("Edição de Veículo", parameters, UpdateDialog);
+
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            veiculos = await httpClient.GetFromJsonAsync<List<Veiculo>>("api/veiculo/listar");
+            StateHasChanged();
+        }
     }
 
     public async Task OpenDialogDelete(int id_veiculo)

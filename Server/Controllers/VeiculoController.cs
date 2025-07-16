@@ -81,5 +81,20 @@ namespace Server.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpPut("atualizar")]
+        public IActionResult AtualizarVeiculo([FromBody] Veiculo veiculo)
+        {
+            try
+            {
+                VeiculoDAO veiculoDAO = new VeiculoDAO();
+                veiculoDAO.UpdateVeiculo(veiculo);
+                return Ok(veiculo);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Internal server error: {ex.Message}");
+            }
+        }
     }
 }
