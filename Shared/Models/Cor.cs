@@ -11,7 +11,7 @@ namespace Shared.Models
     {
         public int Id_cor { get; set; }
 
-        [Required(ErrorMessage = "A cor é obrigatória")]
+        
         public string Nome_cor { get; set; }
                 
     }

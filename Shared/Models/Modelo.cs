@@ -10,7 +10,7 @@ namespace Shared.Models
     public class Modelo
     {
         public int Id_modelo { get; set; }
-        [Required(ErrorMessage = "O modelo é obrigatório.")]
+        
         public string Nome_modelo { get; set; }
     }
 }

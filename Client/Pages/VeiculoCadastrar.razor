@@ -4,6 +4,8 @@
 @using System.Text.RegularExpressions
 @using System.ComponentModel.DataAnnotations
 @inject HttpClient httpClient
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations;
 
 <EditForm Model="@veiculo" OnValidSubmit="CadastrarVeiculo" OnInvalidSubmit="OnInvalidSubmit">
     <DataAnnotationsValidator />
@@ -25,18 +27,38 @@
                 </MudPaper>
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
                     <MudItem xs="6">
-                        <MudAutocomplete SearchFunc="AutoCompleteModelo" @bind-Value="@veiculo.modelo_veiculo.Nome_modelo" T="string" Variant="Variant.Outlined" Label="Modelo*" />
+                        <MudAutocomplete T="Modelo"
+                                         @bind-Value="veiculo.modelo_veiculo"
+                                         SearchFunc="AutoCompleteModelo"
+                                         ToStringFunc="m => m.Nome_modelo"
+                                         Variant="Variant.Outlined"
+                                         Label="Modelo*" />
                     </MudItem>
                     <MudItem xs="6">
-                        <MudAutocomplete SearchFunc="AutoCompleteCores" @bind-Value="@veiculo.cor_veiculo.Nome_cor" T="string" Variant="Variant.Outlined" Label="Cor" />
+                        <MudAutocomplete T="Cor"
+                                         @bind-Value="veiculo.cor_veiculo"
+                                         SearchFunc="AutoCompleteCores"
+                                         ToStringFunc="c => c.Nome_cor"
+                                         Variant="Variant.Outlined"
+                                         Label="Cor*" />
                     </MudItem>
                 </MudPaper>
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
                     <MudItem xs="6">
-                        <MudAutocomplete SearchFunc="AutoCompleteTipoVeiculo" @bind-Value="@veiculo.tipoVeiculo_veiculo.Nome_tipoVeiculo" T="string" Variant="Variant.Outlined" Label="Tipo de Veículo*"/>
+                        <MudAutocomplete T="TipoVeiculo"
+                                         @bind-Value="veiculo.tipoVeiculo_veiculo"
+                                         SearchFunc="AutoCompleteTipoVeiculo"
+                                         ToStringFunc="t => t.Nome_tipoVeiculo"
+                                         Variant="Variant.Outlined"
+                                         Label="Tipo de Veículo*" />
                     </MudItem>
                     <MudItem xs="6">
-
+                        <MudAutocomplete T="Proprietario"
+                                         @bind-Value="veiculo.proprietario_veiculo"
+                                         SearchFunc="AutoCompleteProprietario"
+                                         ToStringFunc="FormatarProprietario"
+                                         Variant="Variant.Outlined"
+                                         Label="Proprietário*" />
                     </MudItem>
                 </MudPaper>
                 <MudPaper Elevation="0" Class="d-flex align-content-start flex-grow-1 gap-4">
@@ -53,6 +75,14 @@
 </EditForm>
 
 @code {
+    private string FormatarProprietario(Proprietario p)
+    {
+        if (string.IsNullOrWhiteSpace(p?.Nome) && string.IsNullOrWhiteSpace(p?.Cpf))
+            return string.Empty;
+
+        return $"{p.Nome} - {p.Cpf}";
+    }
+
     Veiculo veiculo = new Veiculo
         {
             cor_veiculo = new Cor(),
@@ -89,12 +119,30 @@
 
     private async Task CadastrarVeiculo()
     {
-        string api = "api/veiculo/incluir";
+        if (veiculo.cor_veiculo.Nome_cor == null || veiculo.modelo_veiculo.Nome_modelo == null || veiculo.tipoVeiculo_veiculo.Nome_tipoVeiculo == null || veiculo.proprietario_veiculo.Nome == null)
+        {
+            Snackbar.Add("Preencha todos os campos obrigatórios", Severity.Warning);
+            return;
+        }
+
+        veiculo.FK_id_cor = veiculo.cor_veiculo.Id_cor;
+        veiculo.FK_id_modelo = veiculo.modelo_veiculo.Id_modelo;
+        veiculo.FK_id_tipoveiculo = veiculo.tipoVeiculo_veiculo.Id_tipoVeiculo;
+        veiculo.FK_id_proprietario = Convert.ToInt32(veiculo.proprietario_veiculo.Id_proprietario);
+
+        // Limpar as propriedades que não são necessárias para o envio
+        veiculo.cor_veiculo = null;
+        veiculo.modelo_veiculo = null;
+        veiculo.tipoVeiculo_veiculo = null;
+        veiculo.proprietario_veiculo = null;
+
+        string api = "api/Veiculo/incluir";
         HttpResponseMessage httpResponse = await httpClient.PostAsJsonAsync<Veiculo>(api, veiculo);
+        string responseContent = await httpResponse.Content.ReadAsStringAsync();
 
         if (!httpResponse.IsSuccessStatusCode)
         {
-            Snackbar.Add("Erro ao cadastrar o veículo", Severity.Error);
+            Snackbar.Add($"Erro ao cadastrar o veículo: {responseContent}", Severity.Error);
             return;
         }
         else
@@ -108,38 +156,35 @@
         //Snackbar.Add("Erro ao cadastrar veículo", Severity.Error);
     }
 
-    private async Task<IEnumerable<string>> AutoCompleteCores(string valor, CancellationToken cancellationToken)
+    private async Task<IEnumerable<Cor>> AutoCompleteCores(string valor, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrEmpty(valor))
-        {
-            return cores.Select(c => c.Nome_cor);
-        }
+        if (string.IsNullOrWhiteSpace(valor))
+            return cores;
 
-        return cores
-            .Where(c => c.Nome_cor.Contains(valor, StringComparison.OrdinalIgnoreCase))
-            .Select(c => c.Nome_cor);
+        return cores.Where(c => c.Nome_cor.Contains(valor, StringComparison.OrdinalIgnoreCase));
     }
-    private async Task<IEnumerable<string>> AutoCompleteModelo(string valor, CancellationToken cancellationToken)
+    private async Task<IEnumerable<Modelo>> AutoCompleteModelo(string valor, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrEmpty(valor))
-        {
-            return modelos.Select(c => c.Nome_modelo);
-        }
+        if (string.IsNullOrWhiteSpace(valor))
+            return modelos;
 
-        return modelos
-            .Where(c => c.Nome_modelo.Contains(valor, StringComparison.OrdinalIgnoreCase))
-            .Select(c => c.Nome_modelo);
+        return modelos.Where(m => m.Nome_modelo.Contains(valor, StringComparison.OrdinalIgnoreCase));
     }
-    private async Task<IEnumerable<string>> AutoCompleteTipoVeiculo(string valor, CancellationToken cancellationToken)
+    private async Task<IEnumerable<TipoVeiculo>> AutoCompleteTipoVeiculo(string valor, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrEmpty(valor))
-        {
-            return tiposveiculo.Select(c => c.Nome_tipoVeiculo);
-        }
+        if (string.IsNullOrWhiteSpace(valor))
+            return tiposveiculo;
 
-        return tiposveiculo
-            .Where(c => c.Nome_tipoVeiculo.Contains(valor, StringComparison.OrdinalIgnoreCase))
-            .Select(c => c.Nome_tipoVeiculo);
+        return tiposveiculo.Where(t => t.Nome_tipoVeiculo.Contains(valor, StringComparison.OrdinalIgnoreCase));
+    }
+    private async Task<IEnumerable<Proprietario>> AutoCompleteProprietario(string valor, CancellationToken cancellationToken)
+    {
+        if (string.IsNullOrWhiteSpace(valor))
+            return proprietarios;
+
+        return proprietarios.Where(p =>
+            p.Nome.Contains(valor, StringComparison.OrdinalIgnoreCase) ||
+            p.Cpf.Contains(valor));
     }
 }
 

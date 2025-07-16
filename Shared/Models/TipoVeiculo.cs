@@ -10,7 +10,7 @@ namespace Shared.Models
     public class TipoVeiculo
     {
         public int Id_tipoVeiculo { get; set; }
-        [Required(ErrorMessage = "O tipo de veículo é obrigatório.")]
+        
         public string Nome_tipoVeiculo { get; set; }        
     }
 }

@@ -1,0 +1,44 @@
+﻿@using Shared.Models;
+@inject HttpClient httpClient;
+@inject ISnackbar Snackbar
+
+<MudDialog>
+    <TitleContent>
+        Excluir veículo!
+    </TitleContent>
+    <DialogContent>
+        Tem certeza que deseja excluir esse veículo?
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancelar</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Sim</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [Parameter]
+    public Veiculo veiculoPorId { get; set; }
+
+    [CascadingParameter]
+    private IMudDialogInstance MudDialog { get; set; }
+
+    private async void Submit()
+    {
+        string api = $"api/veiculo/excluir/{veiculoPorId.Id_veiculo}";
+        var response = await httpClient.DeleteAsync(api);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Snackbar.Add("O veículo foi excluído com sucesso", Severity.Success);
+        }
+        else
+        {
+            Snackbar.Add("Erro ao excluir veículo", Severity.Error);
+            return;
+        }
+
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+
+    private void Cancel() => MudDialog.Cancel();
+}

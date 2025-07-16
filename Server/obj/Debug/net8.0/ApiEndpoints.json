@@ -141,19 +141,30 @@
   {
     "ContainingType": "Server.Controllers.VeiculoController",
     "Method": "ExcluirVeiculo",
-    "RelativePath": "api/Veiculo/excluir/{id_veiculo}/{id_proprietario}",
+    "RelativePath": "api/Veiculo/excluir/{id_veiculo}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id_veiculo",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Int32",
         "IsRequired": true
-      },
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.VeiculoController",
+    "Method": "IncluirVeiculo",
+    "RelativePath": "api/Veiculo/incluir",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Name": "id_proprietario",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Name": "veiculo",
+        "Type": "Shared.Models.Veiculo",
         "IsRequired": true
       }
     ],
@@ -179,7 +190,7 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

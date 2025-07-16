@@ -99,7 +99,27 @@
 
     public async Task OpenDialogDelete(int id_veiculo)
     {
+        var api = $"api/veiculo/listarPorId/{id_veiculo}";
+        var result = await httpClient.GetFromJsonAsync<Veiculo>(api);
 
+        var parameters = new DialogParameters
+        {
+            { "veiculoPorId", result ?? new Veiculo() }
+        };
+
+        var DeleteDialog = new DialogOptions()
+        {
+            CloseOnEscapeKey = true
+        };
+
+        var dialog = await DialogService.ShowAsync<VeiculoExcluir>("Exclusão de Veículo", parameters, DeleteDialog);
+
+        var DialogResult = await dialog.Result;
+        if (!DialogResult.Canceled)
+        {
+            veiculos = await httpClient.GetFromJsonAsync<List<Veiculo>>("api/veiculo/listar");
+            StateHasChanged();
+        }
     }
 
 
@@ -114,6 +134,8 @@
         if (veiculoTable.Placa_veiculo.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if (veiculoTable.proprietario_veiculo.Nome.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (veiculoTable.proprietario_veiculo.Cpf.Contains(searchString, StringComparison.OrdinalIgnoreCase))
             return true;
         if ($"{veiculoTable.Id_veiculo}".Contains(searchString))
             return true;
